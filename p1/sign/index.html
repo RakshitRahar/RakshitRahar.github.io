@@ -3,17 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sign In</title>
 </head>
 <body>
-    <h2>Sign up</h2>
-
+    <h2>Sign In</h2>
     <div>
-        <form action="">
-        <input type="text" placeholder="Enter your email" id="email"> <br><br>
-        <input type="text" placeholder="Enter your password" id="password"> <br><br>
-        <button>submit</button>
+        <form id="signinForm">
+            <input type="email" placeholder="Enter your email" id="email" required> <br><br>
+            <input type="password" placeholder="Enter your password" id="password" required> <br><br>
+            <button type="submit">Submit</button>
         </form>
+
     </div>
+
+    <script>
+        const signinForm = document.getElementById('signinForm');
+
+        signinForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            let email = document.getElementById('email').value;
+            let password = document.getElementById('password').value;
+
+            let users = JSON.parse(localStorage.getItem('users')) || [];
+
+            let validUser = users.find(user => user.email === email && user.password === password);
+
+            if (validUser) {
+                alert(`Welcome back, ${validUser.name}!`);
+            } else {
+                alert("Invalid credentials! Please try again or sign up.");
+            }
+        });
+    </script>
 </body>
 </html>
