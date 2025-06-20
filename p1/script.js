@@ -2,8 +2,8 @@ let users = [];
 let user = {};
 
 const validateUser = () => {
-  let email = document.getElementById("txtEmail1").value;
-  let pass = document.getElementById("txtPass1").value;
+  let email = document.getElementById("txtEmail").value;
+  let pass = document.getElementById("txtPass").value;
   const found = users.find(
     (value) => value.email === email && value.pass === pass
   );
@@ -14,16 +14,36 @@ const validateUser = () => {
   }
 };
 
+const renderUserList = () => {
+    let x= "<h4>Registered Users:</h4>";
+    if(users.length==0){
+        return "<p>No Users Registered</p>";
+
+    }
+    users.forEach(user => {
+        x += `<p>${user.name} | ${user.email} | ${user.pass} | ${user.balance}</p>`;
+    });
+    
+    return x;
+};
+
 const loginForm = () => {
-  const str = `<div>
+  const str = `
+    <div style='display:flex'>
+    <div>
     <h3>Login Form</h3>
     <p id='errorTxt'></p>
-    <p><input type='text' id='txtEmail1'></p>
-    <p><input type='password' id='txtPass1'></p>
+    <p><input type='text' id='txtEmail'></p>
+    <p><input type='password' id='txtPass'></p>
     <p><button onclick='validateUser()'>Submit</button></p>
     <p><button onclick='registerForm()'>Create Account</button></p>
+    </div>
+    <div>
+     ${renderUserList()}
+    </div>
+    </div>
     `;
-  root.innerHTML = str + "</div>";
+  root.innerHTML = str;
 };
 
 const saveUser = () => {
@@ -34,6 +54,7 @@ const saveUser = () => {
     name,
     email,
     pass,
+    balance:1000,
   });
   loginForm();
 };
@@ -57,3 +78,6 @@ const showHome = () => {
     `;
   root.innerHTML = str + "</div>";
 };
+
+
+loginForm()

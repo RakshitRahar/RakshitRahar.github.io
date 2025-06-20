@@ -4,7 +4,7 @@
   }
   
   .header {
-    background: #1d7070;
+    background: hsl(326, 11%, 29%);
     color: white;
     display: flex;
     justify-content: space-between;
@@ -65,7 +65,7 @@
   }
   
   .services {
-    background: #349595;
+    background: hsl(326, 11%, 29%);
     padding: 2rem;
   
     h3 {

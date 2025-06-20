@@ -1,14 +1,17 @@
 .container {
     display: flex;
     justify-content: center;
+    background-color: aliceblue;
 }
 
 .container div {
-    background: azure;
-    align-items: center;
-    border: 2px solid rgb(9, 3, 3);
-    padding: 100px;
-    margin: 100px;
+    border: 1px solid gray;
+    padding: 10px;
+    margin: 10px;
     border-radius: 10px;
+}
 
+.container input,button {
+    width: 100%;
+    box-sizing: border-box;
 }
