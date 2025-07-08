@@ -1,0 +1,14 @@
+.products {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.product {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  border-radius: 6px;
+  width: 200px;
+}
+button {
+  margin-right: 5px;
+}

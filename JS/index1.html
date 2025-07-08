@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="products">
+  <div class="product" data-id="1">
+    <h3>Product 1</h3>
+    <p>Price: $25</p>
+    <button onclick="addToCartAndRender(1)">Add</button>
+    <button onclick="decrementAndRender(1)">-</button>
+    <button onclick="incrementAndRender(1)">+</button>
+    <p id="qty-1">Quantity: 0</p>
+  </div>
+  <div class="product" data-id="2">
+    <h3>Product 2</h3>
+    <p>Price: $50</p>
+    <button onclick="addToCartAndRender(2)">Add</button>
+    <button onclick="decrementAndRender(2)">-</button>
+    <button onclick="incrementAndRender(2)">+</button>
+    <p id="qty-2">Quantity: 0</p>
+  </div>
+  <div class="product" data-id="3">
+    <h3>Product 3</h3>
+    <p>Price: $75</p>
+    <button onclick="addToCartAndRender(3)">Add</button>
+    <button onclick="decrementAndRender(3)">-</button>
+    <button onclick="incrementAndRender(3)">+</button>
+    <p id="qty-3">Quantity: 0</p>
+  </div>
+</div>
+<h2 id="total">Total: $0</h2>
+
+</body>
+</html>
